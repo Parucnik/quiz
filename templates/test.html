@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="">
+    <title>Викторина</title>
+</head>
+<body>
+    <h1>Тест</h1>
+    <h2>Вопрос: {{ text_question }}</h2>
+    <form method="POST">
+        {% for answer in answers %}
+            <p><input type="radio" name="answer" value="{{ answer }}" required>{{ answer  }}</p>
+        {% endfor %}
+        <button type="submit">Ответить</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="">
+    <title>Викторина</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='quiz.png') }}" type="image/x-icon">
+    <style>
+        img {
+            width: 50px;
+        }
+    </style>
+</head>
+<body>
+    <img src="{{ url_for('static', filename='quiz.png') }}">
+    <h1>Выберите викторину:</h1>
+    <form method="POST">
+        {% for id, quiz in quizes %}
+            <p><input type="radio" name="quiz_id" checked value="{{ id }}">{{ quiz }}</p>   
+        {% endfor %}
+        <button type="submit">Выбрать</button>
+    </form>
+</body>
+</html>
